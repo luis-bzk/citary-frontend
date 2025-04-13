@@ -1,0 +1,19 @@
+.page_container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page_container .text_info {
+  text-align: center;
+}
+
+.page_container .text_info h1 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.page_container .text_info p {
+  color: var(--color-gray-500);
+  font-size: 14px;
+}

@@ -1,0 +1,10 @@
+.auth_link {
+  text-align: center;
+}
+
+.auth_link .text {
+  color: var(--color-gray-500);
+}
+.auth_link .link {
+  font-weight: 500;
+}

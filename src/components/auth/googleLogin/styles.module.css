@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.container .text_separator {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.container .text_separator hr {
+  width: 60px;
+  flex-grow: 1;
+  border: none;
+  height: 1px;
+  background-color: var(--color-gray-300);
+}
+
+.container .text_separator span {
+  color: var(--color-gray-500);
+}
+
+.button_container {
+  width: 100%;
+}
+
+.button_container .button {
+  all: unset;
+  border-radius: 6px;
+  padding: 10px 0;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.button_container .button .icon {
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+}

@@ -1,0 +1,13 @@
+.text_info {
+  text-align: center;
+}
+
+.text_info h1 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.text_info p {
+  color: var(--color-gray-500);
+  font-size: 14px;
+}
