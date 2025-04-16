@@ -1,6 +1,6 @@
 import { AuthLayout } from '@/layouts';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { GoogleCallbackPage, LoginPage, RegisterPage } from '@/pages/auth';
+import { GoogleCallbackPage, LoginPage, RecoverPasswordPage, RegisterPage } from '@/pages/auth';
 
 export function RouterApp() {
   return (
@@ -12,6 +12,7 @@ export function RouterApp() {
           <Route index element={<LoginPage />} />
           <Route path='google-callback' element={<GoogleCallbackPage />} />
           <Route path='register' element={<RegisterPage />} />
+          <Route path='recover-password' element={<RecoverPasswordPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

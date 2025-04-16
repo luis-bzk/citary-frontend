@@ -4,7 +4,7 @@ export const schemaLoginForm = z.object({
   email: z
     .string({ required_error: 'El correo electrónico es requerido' })
     .nonempty('El correo electrónico es requerido')
-    .email('El correo electrónico debe ser válido.'),
+    .email('El correo electrónico debe ser válido'),
   password: z
     .string({ required_error: 'La contraseña es requerida' })
     .nonempty('La contraseña es requerida')

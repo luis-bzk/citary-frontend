@@ -1,25 +1,24 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { InputFormComponent } from '@/components/shared';
-import { LoginFormValues, schemaLoginForm } from '@/validators';
 import styles from './styles.module.css';
+import { RecoverPasswordFormValues, schemaRecoverPasswordForm } from '@/validators';
+import { InputFormComponent } from '@/components/shared';
 import { Link } from 'react-router-dom';
 
-export function LoginFormComponent() {
+export function RecoverPasswordFormComponent() {
   const {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<LoginFormValues>({
-    resolver: zodResolver(schemaLoginForm),
+  } = useForm<RecoverPasswordFormValues>({
+    resolver: zodResolver(schemaRecoverPasswordForm),
     defaultValues: {
       email: '',
-      password: '',
     },
   });
 
-  const onSubmit: SubmitHandler<LoginFormValues> = async (values) => {
+  const onSubmit: SubmitHandler<RecoverPasswordFormValues> = async (values) => {
     console.log(values);
   };
 
@@ -37,29 +36,17 @@ export function LoginFormComponent() {
           control={control}
           error={errors.email}
         />
-
-        <InputFormComponent
-          label='Contraseña'
-          inputOptions={{
-            name: 'password',
-            id: 'password',
-            placeholder: '*******',
-            type: 'password',
-          }}
-          control={control}
-          error={errors.password}
-        />
       </div>
 
       <div className={styles.form_links}>
-        <Link className={styles.link} to={'/auth/recover-password'}>
-          Recuperar contraseña
+        <Link className={styles.link} to={'/auth'}>
+          Cancelar
         </Link>
       </div>
 
       <div className={styles.button_container}>
         <button type='submit' className={styles.button_login}>
-          iniciar sesión
+          Enviar correo
         </button>
       </div>
     </form>
