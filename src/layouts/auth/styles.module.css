@@ -33,19 +33,6 @@
   overflow: hidden;
 }
 
-@media (width < 1024px) {
-  .background_blur {
-    position: absolute;
-    inset: 0;
-    background-image: url('/images/auth_40.webp');
-    background-size: cover;
-    background-position: center;
-    filter: blur(5px);
-    transform: scale(1.05);
-    z-index: 0;
-  }
-}
-
 .right_side_container .box_container {
   width: 100%;
   max-width: 600px;
@@ -55,16 +42,8 @@
 
 @media (width < 1024px) {
   .right_side_container .box_container {
-    background-color: var(--color-white);
     padding: 20px;
     position: relative;
     z-index: 1;
   }
 }
-
-/* background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  padding: 20px;
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px); 
-  border: 1px solid rgba(255, 255, 255, 0.2);  */

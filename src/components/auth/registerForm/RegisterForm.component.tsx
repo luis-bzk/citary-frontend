@@ -4,8 +4,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { InputFormComponent } from '@/components/shared';
 import { RegisterFormValues, schemaRegisterForm } from '@/validators';
 import styles from './component.module.css';
+import { useRegisterUser } from '@/hooks/auth';
+import { LoaderSpinner } from '@/components/svg';
 
 export function RegisterFormComponent() {
+  const register = useRegisterUser();
+
   const {
     handleSubmit,
     control,
@@ -22,7 +26,7 @@ export function RegisterFormComponent() {
   });
 
   const onSubmit: SubmitHandler<RegisterFormValues> = async (values) => {
-    console.log(values);
+    register.mutate(values);
   };
 
   return (
@@ -89,7 +93,7 @@ export function RegisterFormComponent() {
 
       <div className={styles.button_container}>
         <button type='submit' className={styles.button_login}>
-          Registrarse
+          {register.isPending ? <LoaderSpinner /> : <span>Registrarse</span>}
         </button>
       </div>
     </form>

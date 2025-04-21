@@ -1,12 +1,16 @@
+import { Link } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { InputFormComponent } from '@/components/shared';
 import { LoginFormValues, schemaLoginForm } from '@/validators';
 import styles from './styles.module.css';
-import { Link } from 'react-router-dom';
+import { useLoginUser } from '@/hooks/auth';
+import { LoaderSpinner } from '@/components/svg';
 
 export function LoginFormComponent() {
+  const login = useLoginUser();
+
   const {
     handleSubmit,
     control,
@@ -20,7 +24,7 @@ export function LoginFormComponent() {
   });
 
   const onSubmit: SubmitHandler<LoginFormValues> = async (values) => {
-    console.log(values);
+    login.mutate(values);
   };
 
   return (
@@ -59,7 +63,7 @@ export function LoginFormComponent() {
 
       <div className={styles.button_container}>
         <button type='submit' className={styles.button_login}>
-          iniciar sesión
+          {login.isPending ? <LoaderSpinner /> : <span>Iniciar sesión</span>}
         </button>
       </div>
     </form>

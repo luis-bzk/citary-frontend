@@ -1,0 +1,21 @@
+.spinner_back {
+  opacity: 0.25;
+}
+
+.spinner_ajPY {
+  transform-origin: center;
+  animation: spinner_AtaB 0.75s infinite linear;
+}
+
+.default_spinner {
+  fill: var(--color-black);
+}
+.light_spinner {
+  fill: var(--color-white);
+}
+
+@keyframes spinner_AtaB {
+  100% {
+    transform: rotate(360deg);
+  }
+}

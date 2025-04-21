@@ -5,8 +5,12 @@ import styles from './styles.module.css';
 import { RecoverPasswordFormValues, schemaRecoverPasswordForm } from '@/validators';
 import { InputFormComponent } from '@/components/shared';
 import { Link } from 'react-router-dom';
+import { useRecoverPassword } from '@/hooks/auth';
+import { LoaderSpinner } from '@/components/svg';
 
 export function RecoverPasswordFormComponent() {
+  const authHook = useRecoverPassword();
+
   const {
     handleSubmit,
     control,
@@ -19,7 +23,7 @@ export function RecoverPasswordFormComponent() {
   });
 
   const onSubmit: SubmitHandler<RecoverPasswordFormValues> = async (values) => {
-    console.log(values);
+    authHook.mutate(values);
   };
 
   return (
@@ -46,7 +50,7 @@ export function RecoverPasswordFormComponent() {
 
       <div className={styles.button_container}>
         <button type='submit' className={styles.button_login}>
-          Enviar correo
+          {authHook.isPending ? <LoaderSpinner /> : <span>Enviar correo</span>}
         </button>
       </div>
     </form>

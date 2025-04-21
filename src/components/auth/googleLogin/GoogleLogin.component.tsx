@@ -12,7 +12,6 @@ export function GoogleLoginComponent() {
       }
 
       const data: { url: string } = await res.json();
-      console.log({ data });
 
       window.location.href = data.url;
     } catch (error) {
