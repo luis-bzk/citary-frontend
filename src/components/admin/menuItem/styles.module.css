@@ -1,0 +1,35 @@
+.menu_link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 5px;
+  padding: 4px 6px;
+  color: var(--color-stone-800);
+
+  &:hover {
+    background-color: var(--color-green-50);
+
+    .icon {
+      transition: color 0.2s ease-in-out;
+      color: var(--color-emerald-600);
+    }
+
+    .text {
+      transition: color 0.2s ease-in-out;
+      color: var(--color-emerald-600);
+    }
+  }
+}
+
+.menu_link .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.menu_link .text {
+  font-weight: 500;
+}

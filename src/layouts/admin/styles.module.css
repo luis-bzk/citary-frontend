@@ -1,0 +1,12 @@
+.layout_container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.layout_content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}

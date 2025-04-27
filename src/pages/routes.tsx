@@ -1,5 +1,6 @@
-import { AuthLayout } from '@/layouts';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
+import { AdminLayout, AuthLayout } from '@/layouts';
 import {
   ChangePasswordPage,
   GoogleCallbackPage,
@@ -8,6 +9,7 @@ import {
   RegisterPage,
   VerifyAccountPage,
 } from '@/pages/auth';
+import { DashboardPage } from '@/pages/admin';
 
 export function RouterApp() {
   return (
@@ -24,6 +26,11 @@ export function RouterApp() {
           <Route path='change-password/:token' element={<ChangePasswordPage />} />
 
           <Route path='*' element={<Navigate to='/auth' replace />} />
+        </Route>
+
+        <Route path='admin' element={<AdminLayout />}>
+          <Route index element={<DashboardPage />} />
+          <Route path='*' element={<Navigate to='/admin' replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
