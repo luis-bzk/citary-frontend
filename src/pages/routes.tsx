@@ -9,7 +9,8 @@ import {
   RegisterPage,
   VerifyAccountPage,
 } from '@/pages/auth';
-import { DashboardPage } from '@/pages/admin';
+import { HomeDashboardPage } from '@/pages/admin';
+import { PermissionsPage, RolesPage, UsersPage } from '@/pages/admin/administration';
 
 export function RouterApp() {
   return (
@@ -29,7 +30,13 @@ export function RouterApp() {
         </Route>
 
         <Route path='admin' element={<AdminLayout />}>
-          <Route index element={<DashboardPage />} />
+          <Route index element={<HomeDashboardPage />} />
+          <Route path='admin'>
+            <Route path='users' element={<UsersPage />} />
+            <Route path='roles' element={<RolesPage />} />
+            <Route path='permissions' element={<PermissionsPage />} />
+          </Route>
+
           <Route path='*' element={<Navigate to='/admin' replace />} />
         </Route>
       </Routes>

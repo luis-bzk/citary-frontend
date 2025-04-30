@@ -7,6 +7,7 @@ export interface User {
   token: string;
   created_date: Date;
   record_status: string;
+  google_id: string;
 }
 
 export type UserLogin = Pick<User, 'email' | 'password'>;

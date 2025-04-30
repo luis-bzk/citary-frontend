@@ -6,14 +6,14 @@ import { MenuItemComponent } from '@/components/admin';
 const menuOptions = [
   {
     title: 'Dashboard',
-    options: [{ name: 'Inicio', link: '#', icon: <LuLayoutDashboard /> }],
+    options: [{ name: 'Inicio', link: '/admin', icon: <LuLayoutDashboard /> }],
   },
   {
     title: 'Administración',
     options: [
-      { name: 'Usuarios', link: '#', icon: <LuSquareUser /> },
-      { name: 'Roles', link: '#', icon: <LuClipboardList /> },
-      { name: 'Permisos', link: '#', icon: <LuKeySquare /> },
+      { name: 'Usuarios', link: '/admin/admin/users', icon: <LuSquareUser /> },
+      { name: 'Roles', link: '/admin/admin/roles', icon: <LuClipboardList /> },
+      { name: 'Permisos', link: '/admin/admin/permissions', icon: <LuKeySquare /> },
     ],
   },
 ];

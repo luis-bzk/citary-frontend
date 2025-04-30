@@ -1,0 +1,146 @@
+.table_container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.table_container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.table_container::-webkit-scrollbar-track {
+  background-color: var(--color-gray-300);
+}
+
+.table_container::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-500);
+  border-radius: 5px;
+}
+
+.table_container .input_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.table_container .input_container .label {
+  white-space: nowrap;
+  color: var(--color-gray-800);
+  font-weight: 500;
+}
+
+.table_container .input_container .input_search {
+  all: unset;
+  background-color: var(--color-gray-100);
+  border-radius: 5px;
+  width: calc(100% - 30px);
+  padding: 5px;
+  padding-left: 20px;
+}
+
+.table_container .input_container .input_search::placeholder {
+  color: var(--color-gray-500);
+}
+
+.table_container .table {
+  width: 100%;
+  min-width: 1200px;
+  border-spacing: 0;
+  border-radius: 5px;
+  border: 1px solid var(--color-gray-200);
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.table_container .table .table_head {
+  height: 35px;
+  background-color: var(--color-slate-200);
+}
+
+.table_container .table .table_head .cell {
+  cursor: pointer;
+  padding: 5px;
+  font-weight: 500;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: var(--color-slate-100);
+  }
+}
+
+.table_container .table .table_body {
+  background-color: var(--color-slate-100);
+}
+
+.table_container .table .table_body .row .cell {
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: 8px 5px;
+  text-align: center;
+}
+
+.table_container .table .table_body .row:last-child .cell {
+  border-bottom: none;
+}
+
+.table_container .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.table_container .buttons .page {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table_container .buttons .icon {
+  color: var(--color-gray-700);
+  transition: 0.2s;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.table_container .buttons .button {
+  all: unset;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.table_container .buttons .button:hover {
+  background-color: var(--color-gray-200);
+}
+
+.table_container .buttons .button:hover .icon {
+  color: var(--color-gray-800);
+}
+
+.table_container .buttons .button .disable {
+  display: none;
+}
+
+.table_container .buttons .Selector {
+  outline: none;
+  border: none;
+  height: 30px;
+  background-color: var(--color-gray-100);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.table_container .buttons .Selector:hover {
+  background-color: var(--color-primary-200);
+}
