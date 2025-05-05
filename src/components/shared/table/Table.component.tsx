@@ -13,6 +13,15 @@ import {
 
 import styles from './styles.module.css';
 import { IoBookOutline, IoChevronBack, IoChevronForward, IoHomeOutline, IoPlayForwardOutline } from 'react-icons/io5';
+import {
+  LuArrowDownAZ,
+  LuArrowUpZA,
+  LuBookOpen,
+  LuChevronLeft,
+  LuChevronRight,
+  LuChevronsRight,
+  LuHouse,
+} from 'react-icons/lu';
 
 interface Props<T> {
   labelText: string;
@@ -44,7 +53,7 @@ export function TableComponent<T>({ labelText, inputText, columns, rows }: Props
   });
 
   return (
-    <div className={styles.table_container}>
+    <div className={styles.component_container}>
       {/* input */}
       <div className={styles.input_container}>
         <label htmlFor={inputID} className={styles.label}>
@@ -60,49 +69,61 @@ export function TableComponent<T>({ labelText, inputText, columns, rows }: Props
         />
       </div>
 
-      {/* table */}
-      <table className={styles.table}>
-        {/* head */}
-        <thead className={styles.table_head}>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className={styles.row}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id} onClick={header.column.getToggleSortingHandler()} className={styles.cell}>
-                  {flexRender(header.column.columnDef.header, header.getContext())}
+      <div className={styles.table_container}>
+        {/* table */}
+        <table className={styles.table}>
+          {/* head */}
+          <thead className={styles.table_head}>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id} className={styles.row}>
+                {headerGroup.headers.map((header) => (
+                  <th key={header.id} onClick={header.column.getToggleSortingHandler()} className={styles.cell}>
+                    <div className={styles.cell_container}>
+                      {flexRender(header.column.columnDef.header, header.getContext())}
 
-                  {header.column.getIsSorted() === 'asc' ? ' ⬆' : header.column.getIsSorted() === 'desc' ? ' ⬇' : null}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
+                      {header.column.getIsSorted() === 'asc' ? (
+                        <i className={styles.cell_icon}>
+                          <LuArrowDownAZ />
+                        </i>
+                      ) : header.column.getIsSorted() === 'desc' ? (
+                        <i className={styles.cell_icon}>
+                          <LuArrowUpZA />
+                        </i>
+                      ) : null}
+                    </div>
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
 
-        {/* body */}
+          {/* body */}
 
-        <tbody className={styles.table_body}>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id} className={styles.row}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className={styles.cell}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+          <tbody className={styles.table_body}>
+            {table.getRowModel().rows.map((row) => (
+              <tr key={row.id} className={styles.row}>
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id} className={styles.cell}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       {/* buttons */}
       <div className={styles.buttons}>
         <button type='button' className={styles.button} onClick={() => table.setPageIndex(0)}>
           <i className={styles.icon}>
-            <IoHomeOutline />
+            <LuHouse />
           </i>
         </button>
 
         <div className={styles.page}>
           <i className={styles.icon}>
-            <IoBookOutline />
+            <LuBookOpen />
           </i>
           <p>
             {table.getState().pagination.pageIndex + 1} de {table.getPageCount()}
@@ -115,23 +136,27 @@ export function TableComponent<T>({ labelText, inputText, columns, rows }: Props
           onClick={() => table.previousPage()}
         >
           <i className={styles.icon}>
-            <IoChevronBack />
+            <LuChevronLeft />
+          </i>
+        </button>
+
+        <button
+          type='button'
+          className={`${styles.button} ${!table.getCanPreviousPage() ? styles.disable : ''}`}
+          onClick={() => table.nextPage()}
+        >
+          <i className={styles.icon}>
+            <LuChevronRight />
           </i>
         </button>
 
         <button
           type='button'
           className={`${styles.button} ${!table.getCanNextPage() ? styles.disable : ''}`}
-          onClick={() => table.nextPage()}
+          onClick={() => table.setPageIndex(table.getPageCount() - 1)}
         >
           <i className={styles.icon}>
-            <IoChevronForward />
-          </i>
-        </button>
-
-        <button type='button' className={styles.button} onClick={() => table.setPageIndex(table.getPageCount() - 1)}>
-          <i className={styles.icon}>
-            <IoPlayForwardOutline />
+            <LuChevronsRight />
           </i>
         </button>
 

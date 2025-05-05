@@ -24,12 +24,12 @@ export function MenuOptionsComponent() {
   return (
     <div className={styles.container}>
       {menuOptions.map((m) => (
-        <div className={styles.menu}>
+        <div className={styles.menu} key={m.title}>
           {!sidebarIsCollapsed && <p className={styles.title}>{m.title}</p>}
 
           <ul className={styles.menu_options}>
             {m.options.map((o) => (
-              <MenuItemComponent item={o} />
+              <MenuItemComponent item={o} key={o.name} />
             ))}
           </ul>
         </div>
