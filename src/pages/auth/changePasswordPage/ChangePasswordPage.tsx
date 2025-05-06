@@ -3,7 +3,7 @@ import { IoShieldCheckmark, IoShapes, IoLockClosed } from 'react-icons/io5';
 
 import { ChangePasswordForm, HeaderPageComponent } from '@/components/auth';
 import styles from './styles.module.css';
-import { useCheckToken } from '@/hooks/auth';
+import { useCheckToken } from '@/hooks';
 import { parseApiError } from '@/errors';
 import { LoaderMessageComponent } from '@/components/shared';
 

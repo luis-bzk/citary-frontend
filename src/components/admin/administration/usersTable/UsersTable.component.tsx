@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import { TableComponent } from '@/components/shared';
 import { User } from '@/schemas';
 import { LuPencil, LuTrash2 } from 'react-icons/lu';
+import { RECORD_STATUS } from '@/utils';
 
 interface Props {
   users: User[];
@@ -27,18 +28,6 @@ const columns: ColumnDef<User>[] = [
     cell: (info) => <span>{info.getValue<string>()}</span>,
   },
   {
-    header: 'Estado',
-    accessorKey: 'record_status',
-    cell: (info) => {
-      const isActive = info.getValue<boolean>();
-      return (
-        <span className={`${styles.tag_status} ${isActive ? styles.active : styles.deactivated}`}>
-          {isActive ? 'Activo' : 'Inactivo'}
-        </span>
-      );
-    },
-  },
-  {
     header: 'Fecha de creación',
     accessorKey: 'created_date',
     cell: (info) => {
@@ -47,10 +36,22 @@ const columns: ColumnDef<User>[] = [
     },
   },
   {
-    header: 'Acciones',
-    accessorKey: 'id',
+    header: 'Estado',
+    accessorKey: 'record_status',
     cell: (info) => {
-      const id = info.getValue<number>();
+      const isActive: boolean = info.getValue<string>() === RECORD_STATUS.AVAILABLE;
+      return (
+        <span className={`${styles.tag_status} ${isActive ? styles.active : styles.deactivated}`}>
+          {isActive ? 'Activo' : 'Inactivo'}
+        </span>
+      );
+    },
+  },
+  {
+    header: 'Acciones',
+    id: 'actions',
+    cell: ({ row }) => {
+      const id = row.original.id;
       return (
         <div className={styles.action_buttons}>
           <i className={`${styles.action_icon} ${styles.edit}`} onClick={() => console.log(id)}>

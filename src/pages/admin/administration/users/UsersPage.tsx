@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import { Alert, LoaderMessageComponent } from '@/components/shared';
 import { UsersTable } from '@/components/admin/administration';
-import { useGetAllUsers } from '@/hooks/user';
+import { useGetAllUsers } from '@/hooks';
 
 export function UsersPage() {
   const { isLoading, isError, error, data } = useGetAllUsers(100, 0);

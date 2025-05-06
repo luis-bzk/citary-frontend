@@ -3,7 +3,7 @@ import { IoShieldCheckmark, IoShapes, IoLockClosed } from 'react-icons/io5';
 
 import styles from './styles.module.css';
 import { HeaderPageComponent } from '@/components/auth';
-import { useConfirmUser } from '@/hooks/auth';
+import { useConfirmUser } from '@/hooks';
 import { LoaderMessageComponent } from '@/components/shared';
 import { parseApiError } from '@/errors';
 

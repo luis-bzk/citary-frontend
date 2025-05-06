@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { InputFormComponent } from '@/components/shared';
 import { RegisterFormValues, schemaRegisterForm } from '@/validators';
 import styles from './component.module.css';
-import { useRegisterUser } from '@/hooks/auth';
+import { useRegisterUser } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
 
 export function RegisterFormComponent() {

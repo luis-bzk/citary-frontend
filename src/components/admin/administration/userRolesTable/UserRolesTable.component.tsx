@@ -2,31 +2,36 @@ import { ColumnDef } from '@tanstack/react-table';
 
 import styles from './styles.module.css';
 import { TableComponent } from '@/components/shared';
-import { Role } from '@/schemas';
+import { Role, User, UserRole } from '@/schemas';
 import { LuPencil, LuTrash2 } from 'react-icons/lu';
 import { RECORD_STATUS } from '@/utils';
 
 interface Props {
-  roles: Role[];
+  userRoles: UserRole[];
 }
 
-const columns: ColumnDef<Role>[] = [
+const columns: ColumnDef<UserRole>[] = [
   {
     header: 'ID',
     accessorKey: 'id',
     cell: (info) => <span>{info.getValue<number>()}</span>,
   },
   {
-    header: 'Nombre',
-    accessorKey: 'name',
+    header: 'Nombre completo',
+    accessorFn: (row) => `${row.user.name} ${row.user.last_name}`,
+    id: 'fullName',
     cell: (info) => <span>{info.getValue<string>()}</span>,
   },
   {
-    header: 'Descripción',
-    accessorKey: 'description',
-    cell: (info) => <span>{info.getValue<string>()}</span>,
+    header: 'Correo electrónico',
+    accessorKey: 'user',
+    cell: (info) => <span>{info.getValue<User>().email}</span>,
   },
-
+  {
+    header: 'Rol',
+    accessorKey: 'role',
+    cell: (info) => <span>{info.getValue<Role>().name}</span>,
+  },
   {
     header: 'Fecha de creación',
     accessorKey: 'created_date',
@@ -67,10 +72,10 @@ const columns: ColumnDef<Role>[] = [
   },
 ];
 
-export function RolesTable({ roles }: Props) {
+export function UserRolesTable({ userRoles }: Props) {
   return (
     <div>
-      <TableComponent columns={columns} rows={roles} inputText='Juan' labelText='Filtrar usuario' />
+      <TableComponent columns={columns} rows={userRoles} inputText='Juan' labelText='Filtrar usuario' />
     </div>
   );
 }

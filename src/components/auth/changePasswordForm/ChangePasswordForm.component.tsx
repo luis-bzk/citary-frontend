@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import styles from './styles.module.css';
 import { ChangePasswordFormValues, schemaChangePasswordForm } from '@/validators';
-import { useChangePassword } from '@/hooks/auth';
+import { useChangePassword } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
 import { InputFormComponent } from '@/components/shared';
 import { Link } from 'react-router-dom';

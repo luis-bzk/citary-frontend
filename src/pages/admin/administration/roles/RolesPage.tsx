@@ -1,6 +1,6 @@
 import { Alert, LoaderMessageComponent } from '@/components/shared';
 import styles from './styles.module.css';
-import { useGetAllRoles } from '@/hooks/roles';
+import { useGetAllRoles } from '@/hooks';
 import { RolesTable } from '@/components/admin/administration';
 
 export function RolesPage() {

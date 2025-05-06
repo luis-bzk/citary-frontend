@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import { RecoverPasswordFormValues, schemaRecoverPasswordForm } from '@/validators';
 import { InputFormComponent } from '@/components/shared';
 import { Link } from 'react-router-dom';
-import { useRecoverPassword } from '@/hooks/auth';
+import { useRecoverPassword } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
 
 export function RecoverPasswordFormComponent() {

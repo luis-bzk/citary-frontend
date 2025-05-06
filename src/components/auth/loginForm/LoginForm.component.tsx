@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { InputFormComponent } from '@/components/shared';
 import { LoginFormValues, schemaLoginForm } from '@/validators';
 import styles from './styles.module.css';
-import { useLoginUser } from '@/hooks/auth';
+import { useLoginUser } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
 
 export function LoginFormComponent() {
