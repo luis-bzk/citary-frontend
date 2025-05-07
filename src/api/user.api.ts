@@ -7,3 +7,8 @@ export async function getAllUsersApi(limit: number, offset: number, filter: stri
   );
   return res.data;
 }
+
+export async function deleteUserApi(id: number) {
+  const res = await api.delete<{ users: User[]; totalUsers: number }>(`/user/delete/${id}`);
+  return res.data;
+}
