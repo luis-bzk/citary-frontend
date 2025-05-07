@@ -1,3 +1,4 @@
+import styles from './styles.module.css';
 import { WindowModal } from '@/components/shared';
 import { useDeleteUser } from '@/hooks';
 import { AnimatePresence } from 'framer-motion';
@@ -18,10 +19,16 @@ export function DeleteUserModalComponent({ closeModal, userId }: Props) {
     <AnimatePresence>
       <WindowModal closeModal={closeModal} title='Eliminar usuario'>
         <div>
-          <div>Estas seguro de querer eliminar el usuario?</div>
-          <div>
-            <button onClick={confirmDeleteUser}>si</button>
-            <button>no</button>
+          <p className={styles.message}>
+            ¿Estás seguro de que deseas eliminar este usuario? Esta acción no se puede deshacer.
+          </p>
+          <div className={styles.buttons}>
+            <button className={`${styles.button} ${styles.confirm}`} onClick={confirmDeleteUser}>
+              Si, continuar
+            </button>
+            <button className={`${styles.button} ${styles.cancel}`} onClick={closeModal}>
+              No, cancelar
+            </button>
           </div>
         </div>
       </WindowModal>

@@ -1,0 +1,37 @@
+.message {
+  margin-bottom: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.buttons .button {
+  all: unset;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--color-white);
+  transition: background-color 0.2s ease;
+  /* font-weight: 500; */
+}
+
+.buttons .confirm {
+  background-color: var(--color-red-500);
+
+  &:hover {
+    background-color: var(--color-red-600);
+  }
+}
+
+.buttons .cancel {
+  background-color: var(--color-gray-500);
+
+  &:hover {
+    background-color: var(--color-gray-600);
+  }
+}
