@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-import { deleteUserApi, getAllUsersApi } from '@/api';
+import { deleteUserApi, getAllUsersApi, getUserApi } from '@/api';
 import { toast } from 'sonner';
 import { parseApiError } from '@/errors';
 
@@ -30,5 +30,17 @@ export function useDeleteUser() {
       }
       toast.error(apiError.message);
     },
+  });
+}
+
+export function useGetUser(id: number) {
+  return useQuery({
+    queryKey: ['user', id],
+    queryFn: () => getUserApi(id),
+    // cacheTime: 0,
+    staleTime: 0,
+    retry: 1,
+    retryDelay: 1000,
+    refetchOnWindowFocus: false,
   });
 }

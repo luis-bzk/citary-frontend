@@ -1,10 +1,9 @@
 import { ColumnDef } from '@tanstack/react-table';
 
-import styles from './styles.module.css';
 import { TableComponent } from '@/components/shared';
 import { Role } from '@/schemas';
-import { LuPencil, LuTrash2 } from 'react-icons/lu';
 import { RECORD_STATUS } from '@/utils';
+import { ActionButtonsComponent, StatusTagComponent } from '@/components/admin/shared';
 
 interface Props {
   roles: Role[];
@@ -40,11 +39,7 @@ const columns: ColumnDef<Role>[] = [
     accessorKey: 'record_status',
     cell: (info) => {
       const isActive: boolean = info.getValue<string>() === RECORD_STATUS.AVAILABLE;
-      return (
-        <span className={`${styles.tag_status} ${isActive ? styles.active : styles.deactivated}`}>
-          {isActive ? 'Activo' : 'Inactivo'}
-        </span>
-      );
+      return <StatusTagComponent isActive={isActive} />;
     },
   },
   {
@@ -52,17 +47,9 @@ const columns: ColumnDef<Role>[] = [
     id: 'actions',
     cell: ({ row }) => {
       const id = row.original.id;
-      return (
-        <div className={styles.action_buttons}>
-          <i className={`${styles.action_icon} ${styles.edit}`} onClick={() => console.log(id)}>
-            <LuPencil />
-          </i>
-
-          <i className={`${styles.action_icon} ${styles.delete}`}>
-            <LuTrash2 />
-          </i>
-        </div>
-      );
+      const editRoleFn = () => console.log(id);
+      const deleteRoleFn = () => console.log(id);
+      return <ActionButtonsComponent onEdit={editRoleFn} onDelete={deleteRoleFn} />;
     },
   },
 ];

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { ColumnDef } from '@tanstack/react-table';
-import { LuPencil, LuTrash2 } from 'react-icons/lu';
 
-import styles from './styles.module.css';
 import { User } from '@/schemas';
 import { RECORD_STATUS } from '@/utils';
 import { TableComponent } from '@/components/shared';
 import { DeleteUserModalComponent } from '@/components/admin/administration';
+import { ActionButtonsComponent, StatusTagComponent } from '@/components/admin/shared';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   users: User[];
@@ -15,6 +15,7 @@ interface Props {
 export function UsersTable({ users }: Props) {
   const [openModal, setOpenModal] = useState(false);
   const [userSelected, setUserSelected] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   const deleteUser = (id: number) => {
     setOpenModal(true);
@@ -53,11 +54,7 @@ export function UsersTable({ users }: Props) {
       accessorKey: 'record_status',
       cell: (info) => {
         const isActive: boolean = info.getValue<string>() === RECORD_STATUS.AVAILABLE;
-        return (
-          <span className={`${styles.tag_status} ${isActive ? styles.active : styles.deactivated}`}>
-            {isActive ? 'Activo' : 'Inactivo'}
-          </span>
-        );
+        return <StatusTagComponent isActive={isActive} />;
       },
     },
     {
@@ -65,18 +62,9 @@ export function UsersTable({ users }: Props) {
       id: 'actions',
       cell: ({ row }) => {
         const id = row.original.id;
+        const editUserFn = () => navigate(`/admin/administration/users/edit/${id}`);
         const deleteUserFn = () => deleteUser(id);
-        return (
-          <div className={styles.action_buttons}>
-            <i className={`${styles.action_icon} ${styles.edit}`}>
-              <LuPencil />
-            </i>
-
-            <i className={`${styles.action_icon} ${styles.delete}`} onClick={deleteUserFn}>
-              <LuTrash2 />
-            </i>
-          </div>
-        );
+        return <ActionButtonsComponent onEdit={editUserFn} onDelete={deleteUserFn} />;
       },
     },
   ];

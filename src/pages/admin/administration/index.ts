@@ -1,3 +1,3 @@
-export * from './users/UsersPage';
+export * from './users';
 export * from './roles/RolesPage';
 export * from './permissions/PermissionsPage';

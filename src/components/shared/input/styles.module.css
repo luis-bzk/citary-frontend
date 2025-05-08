@@ -34,6 +34,6 @@
 }
 
 .input:focus {
-  border-color: var(--color-stone-700);
-  box-shadow: 0 0 0 1px var(--color-stone-700);
+  border-color: var(--color-emerald-500);
+  box-shadow: 0 0 0 1px var(--color-emerald-500);
 }

@@ -2,7 +2,7 @@ import { LuArrowLeftToLine, LuArrowRightToLine } from 'react-icons/lu';
 
 import { useUIStore } from '@/store/ui';
 import styles from './styles.module.css';
-import { MenuOptionsComponent } from '@/components/admin';
+import { MenuOptionsComponent } from '@/components/admin/general';
 
 export function SideBarComponent() {
   const { sidebarIsCollapsed, sidebarToggleCollapse } = useUIStore();

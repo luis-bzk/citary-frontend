@@ -12,3 +12,8 @@ export async function deleteUserApi(id: number) {
   const res = await api.delete<{ users: User[]; totalUsers: number }>(`/user/delete/${id}`);
   return res.data;
 }
+
+export async function getUserApi(id: number) {
+  const res = await api.get<User>(`/user/get/${id}`);
+  return res.data;
+}

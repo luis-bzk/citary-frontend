@@ -1,14 +1,14 @@
-import styles from './styles.module.css';
-import { Alert, LoaderMessageComponent } from '@/components/shared';
-import { UsersTable } from '@/components/admin/administration';
 import { useGetAllUsers } from '@/hooks';
+import { AdminHeaderPage } from '@/components/admin/shared';
+import { UsersTable } from '@/components/admin/administration';
+import { Alert, LoaderMessageComponent } from '@/components/shared';
 
-export function UsersPage() {
+export function AllUsersPage() {
   const { isLoading, isError, error, data } = useGetAllUsers(100, 0);
 
   return (
     <div>
-      <h2 className={styles.title}>Usuarios</h2>
+      <AdminHeaderPage title='Usuarios' link='/admin/administration/users/create' linkText='Crear usuario' />
 
       {isLoading ? (
         <LoaderMessageComponent message='Cargando' />
