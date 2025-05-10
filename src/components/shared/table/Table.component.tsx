@@ -12,7 +12,6 @@ import {
 } from '@tanstack/react-table';
 
 import styles from './styles.module.css';
-import { IoBookOutline, IoChevronBack, IoChevronForward, IoHomeOutline, IoPlayForwardOutline } from 'react-icons/io5';
 import {
   LuArrowDownAZ,
   LuArrowUpZA,

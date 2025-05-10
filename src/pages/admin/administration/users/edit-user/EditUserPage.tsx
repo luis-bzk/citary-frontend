@@ -13,7 +13,7 @@ export function EditUserPage() {
 
   return (
     <div>
-      <AdminHeaderPage title='Crear usuario' />
+      <AdminHeaderPage title='Editar usuario' linkPrevious='/admin/administration/users' />
 
       {isLoading ? (
         <LoaderMessageComponent message='Cargando usuario...' />

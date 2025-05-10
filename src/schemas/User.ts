@@ -1,18 +1,18 @@
 export interface User {
   id: number;
   name: string;
-  last_name: string;
+  lastname: string;
   email: string;
   password: string;
   token: string;
-  created_date: Date;
-  record_status: string;
-  google_id: string;
+  createdDate: Date;
+  recordStatus: string;
+  googleId: string;
 }
 
 export type UserLogin = Pick<User, 'email' | 'password'>;
 
-export type UserRegister = Pick<User, 'name' | 'last_name' | 'email' | 'password'>;
+export type UserRegister = Pick<User, 'name' | 'lastname' | 'email' | 'password'>;
 
 export type UserPassword = Pick<User, 'email'>;
 

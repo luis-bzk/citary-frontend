@@ -6,7 +6,7 @@ export const schemaUserForm = z.object({
     .nonempty('El nombre es requerido')
     .min(1, 'El nombre es requerido')
     .max(50, 'El nombre no puede exceder los 50 caracteres'),
-  lastName: z
+  lastname: z
     .string({ required_error: 'El apellido es requerido' })
     .nonempty('El apellido es requerido')
     .min(1, 'El apellido es requerido')

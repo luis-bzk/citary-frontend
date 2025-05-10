@@ -3,7 +3,7 @@ import { toast } from 'sonner';
 
 import { authStore } from '@/store/auth';
 import { parseApiError } from '@/errors';
-import { UserChangePassword, UserLogin, UserPassword, UserRegister } from '@/schemas';
+import { UserChangePassword, UserLogin, UserPassword } from '@/schemas';
 import {
   changePasswordApi,
   checkTokenApi,
@@ -12,6 +12,7 @@ import {
   recoverPasswordApi,
   registerUserApi,
 } from '@/api';
+import { UserRegisterApi } from '@/api/entities';
 
 export function useLoginUser() {
   return useMutation({
@@ -32,7 +33,7 @@ export function useLoginUser() {
 
 export function useRegisterUser() {
   return useMutation({
-    mutationFn: (data: UserRegister) => registerUserApi(data),
+    mutationFn: (data: UserRegisterApi) => registerUserApi(data),
     onSuccess: () => {
       toast.success('Revisa tu correo y verifica tu cuenta');
     },

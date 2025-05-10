@@ -1,7 +1,7 @@
 import { Control, Controller, FieldError, FieldValues, Path } from 'react-hook-form';
 
 import styles from './component.module.css';
-import { Alert } from '../alert/AlertComponent';
+import { Alert } from '@/components/shared';
 
 interface InputOptions {
   name: string;

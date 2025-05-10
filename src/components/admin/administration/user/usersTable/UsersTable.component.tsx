@@ -32,7 +32,7 @@ export function UsersTable({ users }: Props) {
     },
     {
       header: 'Nombre completo',
-      accessorFn: (row) => `${row.name} ${row.last_name}`,
+      accessorFn: (row) => `${row.name} ${row.lastname}`,
       id: 'fullName',
       cell: (info) => <span>{info.getValue<string>()}</span>,
     },
@@ -43,7 +43,7 @@ export function UsersTable({ users }: Props) {
     },
     {
       header: 'Fecha de creación',
-      accessorKey: 'created_date',
+      accessorKey: 'createdDate',
       cell: (info) => {
         const date = new Date(info.getValue<string>());
         return <span>{date.toLocaleDateString()}</span>;
@@ -51,7 +51,7 @@ export function UsersTable({ users }: Props) {
     },
     {
       header: 'Estado',
-      accessorKey: 'record_status',
+      accessorKey: 'recordStatus',
       cell: (info) => {
         const isActive: boolean = info.getValue<string>() === RECORD_STATUS.AVAILABLE;
         return <StatusTagComponent isActive={isActive} />;

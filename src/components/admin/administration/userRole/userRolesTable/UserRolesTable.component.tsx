@@ -17,7 +17,7 @@ const columns: ColumnDef<UserRole>[] = [
   },
   {
     header: 'Nombre completo',
-    accessorFn: (row) => `${row.user.name} ${row.user.last_name}`,
+    accessorFn: (row) => `${row.user.name} ${row.user.lastname}`,
     id: 'fullName',
     cell: (info) => <span>{info.getValue<string>()}</span>,
   },

@@ -1,12 +1,13 @@
 import { api } from '@/api/axios';
-import { User, UserChangePassword, UserLogin, UserPassword, UserRegister, UserToken } from '@/schemas';
+import { User, UserChangePassword, UserLogin, UserPassword, UserToken } from '@/schemas';
+import { UserRegisterApi } from '@/api/entities';
 
 export async function loginUserApi(data: UserLogin) {
   const res = await api.post<User>('/auth/login', data);
   return res.data;
 }
 
-export async function registerUserApi(data: UserRegister) {
+export async function registerUserApi(data: UserRegisterApi) {
   const res = await api.post<User>('/auth/signup', data);
   return res.data;
 }

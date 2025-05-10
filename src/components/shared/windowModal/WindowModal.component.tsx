@@ -1,5 +1,5 @@
+import { useEffect } from 'react';
 import { LuX } from 'react-icons/lu';
-import { motion, AnimatePresence } from 'framer-motion';
 import styles from './styles.module.css';
 
 interface Props {
@@ -9,35 +9,26 @@ interface Props {
 }
 
 export function WindowModal({ children, title, closeModal }: Props) {
-  return (
-    <AnimatePresence>
-      <motion.div
-        className={styles.container}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <motion.div
-          className={styles.window}
-          initial={{ opacity: 0, y: 50, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 40, scale: 0.9 }}
-          transition={{
-            duration: 0.3,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          <div className={styles.header}>
-            <p className={styles.title}>{title}</p>
-            <i className={styles.icon} onClick={closeModal}>
-              <LuX />
-            </i>
-          </div>
+  // Opcional: bloqueo del scroll de fondo
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
-          <div className={styles.children}>{children}</div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+  return (
+    <div className={`${styles.container} ${styles.open}`}>
+      <div className={styles.window}>
+        <div className={styles.header}>
+          <p className={styles.title}>{title}</p>
+          <i className={styles.icon} onClick={closeModal}>
+            <LuX />
+          </i>
+        </div>
+
+        <div className={styles.children}>{children}</div>
+      </div>
+    </div>
   );
 }

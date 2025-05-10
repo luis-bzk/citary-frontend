@@ -6,6 +6,24 @@
   margin-bottom: 16px;
 }
 
+.previous {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon_previous {
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-emerald-600);
+  }
+}
+
 .link {
   background-color: var(--color-emerald-500);
   color: var(--color-white);
