@@ -1,14 +1,14 @@
 import { Alert, LoaderMessageComponent } from '@/components/shared';
-import styles from './styles.module.css';
 import { useGetAllRoles } from '@/hooks';
 import { RolesTable } from '@/components/admin/administration';
+import { AdminHeaderPage } from '@/components/admin/shared';
 
-export function RolesPage() {
+export function AllRolesPage() {
   const { isLoading, isError, error, data } = useGetAllRoles(100, 0);
 
   return (
     <div>
-      <h2 className={styles.title}>Usuarios</h2>
+      <AdminHeaderPage title='Roles' link='/admin/administration/roles/create' linkText='Crear rol' />
 
       {isLoading ? (
         <LoaderMessageComponent message='Cargando' />

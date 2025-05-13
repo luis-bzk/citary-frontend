@@ -14,7 +14,6 @@ interface Props {
 export function UserFormComponent({ user }: Props) {
   const createHook = useCreateUser();
   const editHook = useEditUser();
-  console.log({ user });
 
   const {
     handleSubmit,

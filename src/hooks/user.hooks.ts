@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
 
 import { createUserApi, deleteUserApi, getAllUsersApi, getUserApi, editUserApi } from '@/api';
-import { toast } from 'sonner';
 import { parseApiError } from '@/errors';
 import { UserCreateApi } from '@/api/entities';
 
@@ -21,7 +21,7 @@ export function useDeleteUser() {
   return useMutation({
     mutationFn: (id: number) => deleteUserApi(id),
     onSuccess: () => {
-      toast.success('Eliminado correctamente');
+      toast.success('Usuario eliminado correctamente');
       queryClient.invalidateQueries({ queryKey: ['users'] });
     },
     onError: (error) => {
@@ -51,7 +51,7 @@ export function useCreateUser() {
   return useMutation({
     mutationFn: (data: UserCreateApi) => createUserApi(data),
     onSuccess: () => {
-      toast.success('Creado correctamente');
+      toast.success('Usuario creado correctamente');
       queryClient.invalidateQueries({ queryKey: ['users'] });
     },
     onError: (error) => {
@@ -70,7 +70,7 @@ export function useEditUser() {
   return useMutation({
     mutationFn: ({ id, data }: { id: number; data: UserCreateApi }) => editUserApi(id, data),
     onSuccess: () => {
-      toast.success('Actualizado correctamente');
+      toast.success('Usuario actualizado correctamente');
       queryClient.invalidateQueries({ queryKey: ['users'] });
     },
     onError: (error) => {

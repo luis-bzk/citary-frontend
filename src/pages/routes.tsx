@@ -10,7 +10,14 @@ import {
   VerifyAccountPage,
 } from '@/pages/auth';
 import { HomeDashboardPage } from '@/pages/admin';
-import { PermissionsPage, RolesPage, AllUsersPage, CreateUserPage, EditUserPage } from '@/pages/admin/administration';
+import {
+  PermissionsPage,
+  AllRolesPage,
+  AllUsersPage,
+  CreateUserPage,
+  EditUserPage,
+  CreateRolePage,
+} from '@/pages/admin/administration';
 
 export function RouterApp() {
   return (
@@ -38,7 +45,11 @@ export function RouterApp() {
               <Route path='edit/:id' element={<EditUserPage />} />
             </Route>
 
-            <Route path='roles' element={<RolesPage />} />
+            <Route path='roles'>
+              <Route index element={<AllRolesPage />} />
+              <Route path='create' element={<CreateRolePage />} />
+            </Route>
+
             <Route path='permissions' element={<PermissionsPage />} />
           </Route>
 

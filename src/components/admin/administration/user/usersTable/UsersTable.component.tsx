@@ -1,12 +1,13 @@
 import { useState } from 'react';
+
 import { ColumnDef } from '@tanstack/react-table';
+import { useNavigate } from 'react-router-dom';
 
 import { User } from '@/schemas';
 import { RECORD_STATUS } from '@/utils';
 import { TableComponent } from '@/components/shared';
 import { DeleteUserModalComponent } from '@/components/admin/administration';
 import { ActionButtonsComponent, StatusTagComponent } from '@/components/admin/shared';
-import { useNavigate } from 'react-router-dom';
 
 interface Props {
   users: User[];
