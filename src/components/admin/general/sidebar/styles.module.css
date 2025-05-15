@@ -1,12 +1,12 @@
 .side_container {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: var(--color-slate-100);
+  background-color: var(--color-app-bar);
   transition: width 0.3s ease;
   width: 250px;
   min-width: 250px;
-  overflow: hidden;
   padding: 10px 8px;
 }
 
@@ -32,11 +32,35 @@
 
 .toggle_button {
   all: unset;
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  z-index: 100;
   display: grid;
   place-items: center;
-  padding: 5px 8px;
-  border-radius: 6px;
+  border-radius: 25px;
   cursor: pointer;
-  background-color: var(--color-slate-50);
+  background-color: var(--color-surface);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.button_dark_mode {
+  all: unset;
+  display: grid;
+  place-items: center;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 18px;
+
+  &:hover {
+    color: var(--color-primary);
+  }
 }

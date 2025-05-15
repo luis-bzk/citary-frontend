@@ -11,7 +11,7 @@
 }
 
 .window {
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   width: 100%;
   max-width: 600px;
   border-radius: 14px;

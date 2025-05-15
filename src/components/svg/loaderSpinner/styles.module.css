@@ -8,10 +8,10 @@
 }
 
 .default_spinner {
-  fill: var(--color-black);
+  fill: var(--color-text);
 }
 .light_spinner {
-  fill: var(--color-white);
+  fill: var(--color-bg);
 }
 
 @keyframes spinner_AtaB {

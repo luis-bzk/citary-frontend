@@ -13,7 +13,7 @@
 }
 
 .label {
-  color: var(--color-slate-700);
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
@@ -21,19 +21,19 @@
   width: 100%;
   padding: 8px 12px;
   background-color: transparent;
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--color-surface-border);
   border-radius: 6px;
   outline: none;
   text-align: left;
-  color: var(--color-slate-900);
+  color: var(--color-ext-subtle);
   line-height: 1.5;
 }
 
 .input::placeholder {
-  color: var(--color-gray-500);
+  color: var(--color-text-placeholder);
 }
 
 .input:focus {
-  border-color: var(--color-emerald-500);
-  box-shadow: 0 0 0 1px var(--color-emerald-500);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
 }

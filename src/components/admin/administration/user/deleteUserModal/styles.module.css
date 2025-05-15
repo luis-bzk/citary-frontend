@@ -17,21 +17,20 @@
   cursor: pointer;
   color: var(--color-white);
   transition: background-color 0.2s ease;
-  /* font-weight: 500; */
 }
 
 .buttons .confirm {
-  background-color: var(--color-red-500);
+  background-color: var(--color-error);
 
   &:hover {
-    background-color: var(--color-red-600);
+    background-color: var(--color-error-hover);
   }
 }
 
 .buttons .cancel {
-  background-color: var(--color-gray-500);
+  background-color: var(--color-cancel);
 
   &:hover {
-    background-color: var(--color-gray-600);
+    background-color: var(--color-cancel-hover);
   }
 }

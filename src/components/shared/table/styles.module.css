@@ -14,13 +14,13 @@
 
 .component_container .input_container .label {
   white-space: nowrap;
-  color: var(--color-gray-800);
+  color: var(--color-text-subtle);
   font-weight: 500;
 }
 
 .component_container .input_container .input_search {
   all: unset;
-  background-color: var(--color-slate-50);
+  background-color: var(--color-surface);
   border-radius: 5px;
   width: calc(100% - 30px);
   padding: 5px;
@@ -28,7 +28,7 @@
 }
 
 .component_container .input_container .input_search::placeholder {
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 
 .table_container {
@@ -42,11 +42,11 @@
 }
 
 .table_container::-webkit-scrollbar-track {
-  background-color: var(--color-gray-200);
+  background-color: var(--color-surface-muted);
 }
 
 .table_container::-webkit-scrollbar-thumb {
-  background-color: var(--color-emerald-500);
+  background-color: var(--color-primary);
   border-radius: 5px;
 }
 
@@ -60,14 +60,14 @@
 
 .table_container .table .table_head {
   height: 35px;
-  background-color: var(--color-slate-50);
+  background-color: var(--color-table);
 }
 
 .table_container .table .table_head .cell {
   cursor: pointer;
   padding: 5px;
   transition: 0.2s;
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid var(--color-table-border);
 
   &:hover {
     background-color: var(--color-slate-100);
@@ -85,13 +85,13 @@
 
 .table_container .table .table_head .cell_container .cell_icon {
   font-size: 16px;
-  color: var(--color-emerald-600);
+  color: var(--color-primary);
   display: grid;
   place-items: center;
 }
 
 .table_container .table .table_body .row .cell {
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid var(--color-table-border);
   padding: 8px 5px;
   text-align: center;
 }
@@ -111,7 +111,7 @@
 }
 
 .component_container .buttons .icon {
-  color: var(--color-gray-700);
+  color: var(--color-text-subtle);
   transition: 0.2s;
   font-size: 20px;
   display: grid;
@@ -129,11 +129,11 @@
 }
 
 .component_container .buttons .button:hover {
-  background-color: var(--color-gray-200);
+  background-color: var(--color-surface-muted);
 }
 
 .component_container .buttons .button:hover .icon {
-  color: var(--color-gray-800);
+  color: var(--color-primary);
 }
 
 .component_container .buttons .disable {
@@ -144,7 +144,8 @@
   outline: none;
   border: none;
   height: 30px;
-  background-color: var(--color-slate-100);
+  color: var(--color-text);
+  background-color: var(--color-surface);
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
@@ -152,5 +153,5 @@
 }
 
 .component_container .buttons .selector:hover {
-  background-color: var(--color-slate-200);
+  background-color: var(--color-surface-muted);
 }
