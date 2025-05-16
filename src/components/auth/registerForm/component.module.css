@@ -4,28 +4,3 @@
   gap: 12px;
   margin-bottom: 20px;
 }
-
-.button_container .button_login {
-  all: unset;
-  width: 100%;
-  background-color: var(--color-stone-800);
-  border-radius: 6px;
-  padding: 10px 0;
-  font-size: 16px;
-  color: var(--color-white);
-  text-align: center;
-  transition: box-shadow 0.2s ease-in-out;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  }
-
-  &:active {
-    box-shadow: none;
-    transform: scale(0.98);
-  }
-}

@@ -3,13 +3,13 @@
 }
 
 .auth_link .text {
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 .auth_link .link {
   font-weight: 500;
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: var(--color-emerald-600);
+    color: var(--color-primary);
   }
 }

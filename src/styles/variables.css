@@ -12,6 +12,8 @@
   --color-text-subtle: #27272a;
   --color-text-inverse: #ffffff;
   --color-text-placeholder: #6b7280;
+  --color-text-separator: #6b7280;
+  --color-text-separator-line: #d1d5db;
   --color-surface: #f8fafc;
   --color-surface-muted: #e5e7eb;
   --color-surface-border: #d1d5db;
@@ -20,6 +22,7 @@
   --color-table-border: #d1d5db;
   --color-primary: #10b981;
   --color-primary-hover: #059669;
+  --color-auth-button: #292524;
 
   --color-cancel: #4b5563;
   --color-cancel-hover: #374151;

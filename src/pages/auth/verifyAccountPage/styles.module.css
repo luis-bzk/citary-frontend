@@ -61,11 +61,11 @@
 .button_login {
   display: block;
   width: 100%;
-  background-color: var(--color-stone-800);
+  background-color: var(--color-auth-button);
   border-radius: 6px;
   padding: 10px 0;
   font-size: 16px;
-  color: var(--color-white);
+  color: var(--color-text-inverse);
   text-align: center;
   transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
   cursor: pointer;

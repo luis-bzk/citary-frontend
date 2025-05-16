@@ -7,6 +7,7 @@ import { LoginFormValues, schemaLoginForm } from '@/validators';
 import styles from './styles.module.css';
 import { useLoginUser } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
+import { AuthButtonComponent } from '@/components/auth';
 
 export function LoginFormComponent() {
   const login = useLoginUser();
@@ -62,9 +63,7 @@ export function LoginFormComponent() {
       </div>
 
       <div className={styles.button_container}>
-        <button type='submit' className={styles.button_login}>
-          {login.isPending ? <LoaderSpinner /> : <span>Iniciar sesión</span>}
-        </button>
+        <AuthButtonComponent>{login.isPending ? <LoaderSpinner /> : <span>Iniciar sesión</span>}</AuthButtonComponent>
       </div>
     </form>
   );

@@ -7,6 +7,7 @@ import { useChangePassword } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
 import { InputFormComponent } from '@/components/shared';
 import { Link } from 'react-router-dom';
+import { AuthButtonComponent } from '@/components/auth';
 
 interface Props {
   token: string;
@@ -65,9 +66,9 @@ export function ChangePasswordForm({ token }: Props) {
       </div>
 
       <div className={styles.button_container}>
-        <button type='submit' className={styles.button_login}>
+        <AuthButtonComponent>
           {authHook.isPending ? <LoaderSpinner /> : <span>Cambiar mi contraseña</span>}
-        </button>
+        </AuthButtonComponent>
       </div>
     </form>
   );

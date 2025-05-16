@@ -6,6 +6,7 @@ import { RegisterFormValues, schemaRegisterForm } from '@/validators';
 import styles from './component.module.css';
 import { useRegisterUser } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
+import { AuthButtonComponent } from '@/components/auth';
 
 export function RegisterFormComponent() {
   const register = useRegisterUser();
@@ -92,9 +93,7 @@ export function RegisterFormComponent() {
       </div>
 
       <div className={styles.button_container}>
-        <button type='submit' className={styles.button_login}>
-          {register.isPending ? <LoaderSpinner /> : <span>Registrarse</span>}
-        </button>
+        <AuthButtonComponent>{register.isPending ? <LoaderSpinner /> : <span>Registrarse</span>}</AuthButtonComponent>
       </div>
     </form>
   );

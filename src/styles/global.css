@@ -47,6 +47,8 @@
   --color-text-muted: #cbd5e1;
   --color-text-subtle: #e4e4e7;
   --color-text-placeholder: #9ca3af;
+  --color-text-separator: #d1d5db;
+  --color-text-separator-line: #6b7280;
   --color-surface: #404040;
   --color-surface-muted: #374151;
   --color-surface-border: #6b7280;
@@ -55,6 +57,7 @@
   --color-table-border: #52525b;
   --color-primary: #059669;
   --color-primary-hover: #047857;
+  --color-auth-button: #e7e5e4;
 
   --color-cancel: #6b7280;
   --color-cancel-hover: #4b5563;

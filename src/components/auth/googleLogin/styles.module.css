@@ -16,11 +16,11 @@
   flex-grow: 1;
   border: none;
   height: 1px;
-  background-color: var(--color-gray-300);
+  background-color: var(--color-text-separator-line);
 }
 
 .container .text_separator span {
-  color: var(--color-gray-500);
+  color: var(--color-text-separator);
 }
 
 .button_container {
@@ -33,7 +33,7 @@
   padding: 10px 0;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-
+  background-color: var(--color-surface);
   display: flex;
   flex-direction: row;
   justify-content: center;

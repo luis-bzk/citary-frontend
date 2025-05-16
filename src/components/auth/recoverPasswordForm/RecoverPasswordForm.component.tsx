@@ -7,6 +7,7 @@ import { InputFormComponent } from '@/components/shared';
 import { Link } from 'react-router-dom';
 import { useRecoverPassword } from '@/hooks';
 import { LoaderSpinner } from '@/components/svg';
+import { AuthButtonComponent } from '@/components/auth';
 
 export function RecoverPasswordFormComponent() {
   const authHook = useRecoverPassword();
@@ -49,9 +50,7 @@ export function RecoverPasswordFormComponent() {
       </div>
 
       <div className={styles.button_container}>
-        <button type='submit' className={styles.button_login}>
-          {authHook.isPending ? <LoaderSpinner /> : <span>Enviar correo</span>}
-        </button>
+        <AuthButtonComponent>{authHook.isPending ? <LoaderSpinner /> : <span>Enviar correo</span>}</AuthButtonComponent>
       </div>
     </form>
   );
