@@ -5,7 +5,7 @@ export function LoginPage() {
   return (
     <div className={styles.page_container}>
       <HeaderPageComponent
-        title='Bienvenido de vuelta a My Appointments'
+        title='Bienvenido de vuelta a Citary'
         subtitle='Introduce tu usuario y contraseña para continuar'
       />
 

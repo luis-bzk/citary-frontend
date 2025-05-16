@@ -11,7 +11,7 @@ export function SideBarComponent() {
 
   return (
     <div className={`${styles.side_container} ${sidebarIsCollapsed ? styles.collapsed : ''}`}>
-      <div className={styles.header}>{!sidebarIsCollapsed && <h1 className={styles.title}>My Appointments</h1>}</div>
+      <div className={styles.header}>{!sidebarIsCollapsed && <h1 className={styles.title}>Citary</h1>}</div>
 
       <button onClick={sidebarToggleCollapse} className={styles.toggle_button}>
         {sidebarIsCollapsed ? <LuArrowRightToLine /> : <LuArrowLeftToLine />}

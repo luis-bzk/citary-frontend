@@ -5,7 +5,7 @@ export function RegisterPage() {
   return (
     <div className={styles.page_container}>
       <HeaderPageComponent
-        title='Crea una cuenta en My Appointments'
+        title='Crea una cuenta en Citary'
         subtitle='Completa los campos para registrarte y empezar a agendar citas fácilmente'
       />
 
