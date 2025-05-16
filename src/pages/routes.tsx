@@ -17,6 +17,7 @@ import {
   CreateUserPage,
   EditUserPage,
   CreateRolePage,
+  EditRolePage,
 } from '@/pages/admin/administration';
 
 export function RouterApp() {
@@ -48,6 +49,7 @@ export function RouterApp() {
             <Route path='roles'>
               <Route index element={<AllRolesPage />} />
               <Route path='create' element={<CreateRolePage />} />
+              <Route path='edit/:id' element={<EditRolePage />} />
             </Route>
 
             <Route path='permissions' element={<PermissionsPage />} />
