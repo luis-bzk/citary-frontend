@@ -44,7 +44,8 @@
   --color-bg: #262626;
   --color-text: #ffffff;
   --color-text-inverse: #262626;
-  --color-text-muted: #cbd5e1;
+  --color-text-muted: #afafaf;
+  /* --color-text-muted: #cbd5e1; */
   --color-text-subtle: #e4e4e7;
   --color-text-placeholder: #9ca3af;
   --color-text-separator: #d1d5db;

@@ -19,6 +19,7 @@ import {
   CreateRolePage,
   EditRolePage,
 } from '@/pages/admin/administration';
+import { AllCountriesPage } from './admin/location';
 
 export function RouterApp() {
   return (
@@ -53,6 +54,11 @@ export function RouterApp() {
             </Route>
 
             <Route path='permissions' element={<PermissionsPage />} />
+          </Route>
+          <Route path='location'>
+            <Route path='countries'>
+              <Route index element={<AllCountriesPage />} />
+            </Route>
           </Route>
 
           <Route path='*' element={<Navigate to='/admin' replace />} />
