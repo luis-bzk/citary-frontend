@@ -1,11 +1,12 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
-import styles from './styles.module.css';
-import { schemaUserForm, UserFormValues } from '@/validators/user';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { InputFormComponent, LoaderMessageComponent } from '@/components/shared';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+import styles from './styles.module.css';
 import { User } from '@/schemas';
-import { useCreateUser, useEditUser } from '@/hooks';
 import { UserMapper } from '@/mappers';
+import { useCreateUser, useEditUser } from '@/hooks';
+import { schemaUserForm, UserFormValues } from '@/validators/user';
+import { InputFormComponent, LoaderMessageComponent } from '@/components/shared';
 
 interface Props {
   user?: User;

@@ -19,7 +19,7 @@ import {
   CreateRolePage,
   EditRolePage,
 } from '@/pages/admin/administration';
-import { AllCountriesPage } from './admin/location';
+import { AllCountriesPage, CreateCountryPage, EditCountryPage } from '@/pages/admin/location';
 
 export function RouterApp() {
   return (
@@ -58,6 +58,8 @@ export function RouterApp() {
           <Route path='location'>
             <Route path='countries'>
               <Route index element={<AllCountriesPage />} />
+              <Route path='create' element={<CreateCountryPage />} />
+              <Route path='edit/:id' element={<EditCountryPage />} />
             </Route>
           </Route>
 
