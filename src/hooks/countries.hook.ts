@@ -3,15 +3,9 @@ import { toast } from 'sonner';
 
 import { parseApiError } from '@/errors';
 import { CountryCreateApi } from '@/api/entities';
-import {
-  getAllCountriesApi,
-  createCountryApi,
-  editCountryApi,
-  getCountryApi,
-  deleteCountryApi,
-} from '@/api/country.api';
+import { getAllCountriesApi, createCountryApi, editCountryApi, getCountryApi, deleteCountryApi } from '@/api';
 
-export function useGetAllCountries(limit = 10, offset = 0, filter = '') {
+export function useGetAllCountries(limit = 50, offset = 0, filter = '') {
   return useQuery({
     queryKey: ['countries'],
     queryFn: () => getAllCountriesApi(limit, offset, filter),

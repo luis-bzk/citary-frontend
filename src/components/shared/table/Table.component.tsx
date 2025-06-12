@@ -141,7 +141,7 @@ export function TableComponent<T>({ labelText, inputText, columns, rows }: Props
 
         <button
           type='button'
-          className={`${styles.button} ${!table.getCanPreviousPage() ? styles.disable : ''}`}
+          className={`${styles.button} ${!table.getCanNextPage() ? styles.disable : ''}`}
           onClick={() => table.nextPage()}
         >
           <i className={styles.icon}>

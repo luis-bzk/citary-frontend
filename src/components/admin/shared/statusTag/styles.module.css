@@ -4,11 +4,11 @@
 }
 
 .active {
-  background-color: var(--color-green-200);
-  color: var(--color-green-800);
+  background-color: var(--color-success-light);
+  color: var(--color-success-hard);
 }
 
 .deactivated {
-  background-color: var(--color-red-200);
-  color: var(--color-red-800);
+  background-color: var(--color-error-light);
+  color: var(--color-error-hard);
 }

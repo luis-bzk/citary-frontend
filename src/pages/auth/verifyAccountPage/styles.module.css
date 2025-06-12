@@ -20,13 +20,13 @@
 }
 
 .icon_loading {
-  color: var(--color-blue-500);
+  color: var(--color-info);
 }
 .icon_error {
-  color: var(--color-red-500);
+  color: var(--color-error);
 }
 .icon_success {
-  color: var(--color-green-500);
+  color: var(--color-success);
 }
 
 .icon::before {
@@ -44,13 +44,13 @@
 }
 
 .icon_loading::before {
-  background-color: var(--color-blue-500);
+  background-color: var(--color-info);
 }
 .icon_error::before {
-  background-color: var(--color-red-500);
+  background-color: var(--color-error);
 }
 .icon_success::before {
-  background-color: var(--color-green-500);
+  background-color: var(--color-success);
 }
 
 .button_container {

@@ -4,7 +4,7 @@ import { UsersTable } from '@/components/admin/administration';
 import { Alert, LoaderMessageComponent } from '@/components/shared';
 
 export function AllUsersPage() {
-  const { isLoading, isError, error, data } = useGetAllUsers(100, 0);
+  const { isLoading, isError, error, data } = useGetAllUsers(50, 0);
 
   return (
     <div>

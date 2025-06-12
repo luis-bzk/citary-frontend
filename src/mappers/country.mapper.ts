@@ -1,6 +1,6 @@
-import { CountryApi, CountryCreateApi } from '@/api/entities';
-import { Country } from '@/schemas/Country';
+import { Country } from '@/schemas';
 import { CountryFormValues } from '@/validators/country';
+import { CountryApi, CountryCreateApi } from '@/api/entities';
 
 export class CountryMapper {
   static mapApiToDomain(data: CountryApi): Country {

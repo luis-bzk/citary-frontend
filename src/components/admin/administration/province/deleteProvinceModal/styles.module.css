@@ -1,0 +1,36 @@
+.message {
+  margin-bottom: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.buttons .button {
+  all: unset;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--color-white);
+  transition: background-color 0.2s ease;
+}
+
+.buttons .confirm {
+  background-color: var(--color-error);
+
+  &:hover {
+    background-color: var(--color-error-hover);
+  }
+}
+
+.buttons .cancel {
+  background-color: var(--color-cancel);
+
+  &:hover {
+    background-color: var(--color-cancel-hover);
+  }
+}

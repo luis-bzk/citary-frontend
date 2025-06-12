@@ -13,7 +13,7 @@
 .button_container .button_create {
   all: unset;
   width: 100%;
-  background-color: var(--color-emerald-500);
+  background-color: var(--color-primary);
   border-radius: 6px;
   padding: 10px 0;
   font-size: 16px;
@@ -27,7 +27,7 @@
   justify-content: center;
 
   &:hover {
-    background-color: var(--color-emerald-600);
+    background-color: var(--color-primary-hover);
   }
 
   &:active {

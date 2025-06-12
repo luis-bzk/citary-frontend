@@ -9,16 +9,16 @@
   color: var(--color-text-subtle);
 
   &:hover {
-    background-color: var(--color-green-50);
+    background-color: var(--color-success-light);
 
     .icon {
       transition: color 0.2s ease-in-out;
-      color: var(--color-emerald-600);
+      color: var(--color-primary);
     }
 
     .text {
       transition: color 0.2s ease-in-out;
-      color: var(--color-emerald-600);
+      color: var(--color-primary);
     }
   }
 }

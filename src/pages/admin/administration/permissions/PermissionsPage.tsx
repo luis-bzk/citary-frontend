@@ -4,7 +4,7 @@ import { UserRolesTable } from '@/components/admin/administration';
 import { AdminHeaderPage } from '@/components/admin/shared';
 
 export function PermissionsPage() {
-  const { isLoading, isError, error, data } = useGetAllUserRoles(100, 0);
+  const { isLoading, isError, error, data } = useGetAllUserRoles(50, 0);
 
   return (
     <div>

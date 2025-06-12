@@ -21,10 +21,10 @@
 }
 
 .buttons .confirm {
-  background-color: var(--color-red-500);
+  background-color: var(--color-error);
 
   &:hover {
-    background-color: var(--color-red-600);
+    background-color: var(--color-error-hover);
   }
 }
 

@@ -4,7 +4,7 @@ import { Alert, LoaderMessageComponent } from '@/components/shared';
 import { useGetAllCountries } from '@/hooks';
 
 export function AllCountriesPage() {
-  const { isLoading, isError, error, data } = useGetAllCountries(100, 0);
+  const { isLoading, isError, error, data } = useGetAllCountries(50, 0);
 
   return (
     <div>

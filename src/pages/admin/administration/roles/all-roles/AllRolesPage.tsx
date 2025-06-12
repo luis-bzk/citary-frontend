@@ -4,7 +4,7 @@ import { RolesTable } from '@/components/admin/administration';
 import { AdminHeaderPage } from '@/components/admin/shared';
 
 export function AllRolesPage() {
-  const { isLoading, isError, error, data } = useGetAllRoles(100, 0);
+  const { isLoading, isError, error, data } = useGetAllRoles(50, 0);
 
   return (
     <div>

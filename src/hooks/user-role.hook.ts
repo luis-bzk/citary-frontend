@@ -5,7 +5,7 @@ import { parseApiError } from '@/errors';
 import { UserRoleCreateApi } from '@/api/entities';
 import { createUserRoleApi, deleteUserRoleApi, editUserRoleApi, getAllUserRolesApi, getUserRoleApi } from '@/api';
 
-export function useGetAllUserRoles(limit = 10, offset = 0) {
+export function useGetAllUserRoles(limit = 50, offset = 0) {
   return useQuery({
     queryKey: ['user-roles'],
     queryFn: () => getAllUserRolesApi(limit, offset),

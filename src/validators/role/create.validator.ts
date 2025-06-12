@@ -5,7 +5,7 @@ export const schemaRoleForm = z.object({
     .string({ required_error: 'El nombre es requerido' })
     .nonempty('El nombre es requerido')
     .min(1, 'El nombre es requerido')
-    .max(100, 'El nombre no puede exceder los 100 caracteres'),
+    .max(50, 'El nombre no puede exceder los 50 caracteres'),
   description: z
     .string({ required_error: 'La descripción es requerido' })
     .nonempty('La descripción es requerido')

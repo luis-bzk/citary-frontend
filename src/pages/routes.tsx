@@ -19,7 +19,14 @@ import {
   CreateRolePage,
   EditRolePage,
 } from '@/pages/admin/administration';
-import { AllCountriesPage, CreateCountryPage, EditCountryPage } from '@/pages/admin/location';
+import {
+  AllCountriesPage,
+  CreateCountryPage,
+  EditCountryPage,
+  AllProvincesPage,
+  CreateProvincePage,
+  EditProvincePage,
+} from '@/pages/admin/location';
 
 export function RouterApp() {
   return (
@@ -55,11 +62,18 @@ export function RouterApp() {
 
             <Route path='permissions' element={<PermissionsPage />} />
           </Route>
+
           <Route path='location'>
             <Route path='countries'>
               <Route index element={<AllCountriesPage />} />
               <Route path='create' element={<CreateCountryPage />} />
               <Route path='edit/:id' element={<EditCountryPage />} />
+            </Route>
+
+            <Route path='provinces'>
+              <Route index element={<AllProvincesPage />} />
+              <Route path='create' element={<CreateProvincePage />} />
+              <Route path='edit/:id' element={<EditProvincePage />} />
             </Route>
           </Route>
 

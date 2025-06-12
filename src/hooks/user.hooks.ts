@@ -5,7 +5,7 @@ import { createUserApi, deleteUserApi, getAllUsersApi, getUserApi, editUserApi }
 import { parseApiError } from '@/errors';
 import { UserCreateApi } from '@/api/entities';
 
-export function useGetAllUsers(limit = 10, offset = 0, filter = '') {
+export function useGetAllUsers(limit = 50, offset = 0, filter = '') {
   return useQuery({
     queryKey: ['users'],
     queryFn: () => getAllUsersApi(limit, offset, filter),

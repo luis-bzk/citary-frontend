@@ -17,19 +17,19 @@
 }
 
 .action_buttons .edit {
-  color: var(--color-blue-500);
+  color: var(--color-info);
 
   &:hover {
     color: var(--color-white);
-    background-color: var(--color-blue-500);
+    background-color: var(--color-info-hover);
   }
 }
 
 .action_buttons .delete {
-  color: var(--color-red-500);
+  color: var(--color-error);
 
   &:hover {
     color: var(--color-white);
-    background-color: var(--color-red-500);
+    background-color: var(--color-error-hover);
   }
 }
